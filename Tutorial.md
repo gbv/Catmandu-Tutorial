@@ -129,3 +129,11 @@ $ catmandu convert XML --type ordered to JSON --pretty 1 < doc.xml
 ```
 
 In ordered XML, each XML element is represented as ternary array with element name, attributes, and child elements. Several fixes exist (not yet in version 0.02) to map ordered XML to flat structures.
+
+## Exporting XML
+
+...
+
+## Specific XML formats
+
+...e.g. SOLR, MODS, PICAXML...
