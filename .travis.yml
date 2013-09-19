@@ -1,0 +1,11 @@
+language: perl
+perl:
+    - "5.14"
+
+install:
+    - cpanm --installdeps .
+
+script:
+    - ./testdoc.pl
+
+env: RELEASE_TESTING=1 AUTOMATED_TESTING=1 AUTHOR_TESTING=1
