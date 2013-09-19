@@ -1,0 +1,47 @@
+mab_map('001','dc.identifier');
+mab_map('025[l]','bibo.lccn.$append');
+mab_map('025[o]','bibo.oclcnum.$append');
+mab_map('036[a]','dcterms.spatial');
+mab_map('037[b]','dc.language');
+mab_map('050[ ]','dc.format');
+# Erscheinungsform Zeitschrift p bibo.Periodical, Serie r bibo.Series, Zeitung z bibo.Newspaper
+mab_map('052[ ]/0-0','rdf.type');
+mab_map('073[ ]','zdb.ssg.$append');
+# Körperschaft
+mab_map('200[ ]','dc.creator');
+# Hauptsachtitel_in_Vorlageform
+mab_map('331[ ]','dc.title');
+# Zusaetze zum Hauptsachtitel
+mab_map('335[ ]','rda.otherTitleInformation');
+# Unterreihe
+mab_map('360[ ]','zdb.subseries.$append');
+# Zusammengesetzter Titel: dc.title : rda.otherTitleInformation / zdb.subseries
+mab_map('376[b]','bibo.coden');
+# Erscheinungsverlauf
+mab_map('405[ ]','dc.coverage');
+# "Berichtsjahr"
+mab_map('406[a]jk','zdb.reportingYearClosed.$append', -join => ' - ');
+mab_map('406[b]j','zdb.reportingYearOpen.$append');
+mab_map('410[ ]','rda.placeOfPublication');
+mab_map('412[ ]','dc.publisher');
+# Erscheinungsjahre
+mab_map('425[bc]','dcterms.issued', -join => ' - ');
+# Hinweise auf parallele Ausgaben
+mab_map('527[z]','dcterms.hasVersion.$append');
+# Titel von Beilagen
+mab_map('529[z]','dcterms.hasPart.$append');
+# Titel von Bezugswerken
+mab_map('530[z]','dcterms.isPartOf.$append');
+# Hinweise auf frührere Ausgaben
+mab_map('531[z]','rda.precededBy.$append');
+# Hinweise auf spätere Ausgaben
+mab_map('533[z]','rda.succeededBy.$append');
+mab_map('542[a]','bibo.issn.$append');
+mab_map('655u','foaf.isPrimaryTopicOf.$append');
+mab_map('655z','zdb.kfr.$append');
+mab_map('700[ ]','dc.subject.$append');
+add_field('_type', 'bib');
+# bibo.issn undef
+regex_set('bibo.issn','\d{4}-\d{3}[xX0-9]');
+remove_field('record');
+zdb_normalize();

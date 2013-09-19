@@ -1,0 +1,13 @@
+mab_map('001','identifier');
+mab_map('002[a]','date');
+mab_map('037[b]','language');
+mab_map('050[ ]','format');
+mab_map('052[ ]_/0-0','type');
+mab_map('200[ ]','creator');
+mab_map('331[ ]','title');
+mab_map('405[ ]','coverage');
+mab_map('412[ ]','publisher');
+mab_map('527[ ]','related.$append');
+mab_map('700[ ]','subject.$append');
+# mab2_normalize();
+remove_field('record');
