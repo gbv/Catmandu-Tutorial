@@ -3,7 +3,7 @@ perl:
     - "5.14"
 
 install:
-    - cpanm --installdeps .
+    - cpanm --installdeps --notest .
 
 script:
     - ./testdoc.pl
