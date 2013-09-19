@@ -463,7 +463,7 @@ Cheatsheet
        options:
         database_name: bibliographic
         bag: marc
-        
+        
 
 ## Catmandu::Importer
     
