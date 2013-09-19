@@ -3,7 +3,6 @@
 
 use v5.14.1;
 use Test::More;
-use JSON qw(from_json);
 use autodie;
 
 # TODO: test on perl 5.18
@@ -65,10 +64,7 @@ sub handle_cmd {
     say $out $got;
     say $out '```';
 
-    #if ($got =~ /^{.*}$/m and $expect =~ /^{.*}$/m) {
-    #    $got    = from_json($got),
-    #    $expect = from_json($expect);
-    #}
+    # this may fail when data contains hashes
     is $got, $expect, $cmd;
 
     if ($next_cmd) {
