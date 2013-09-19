@@ -1,0 +1,3 @@
+[submodule "vzgspec"]
+	path = vzgspec
+	url = https://github.com/gbv/vzgspec.git

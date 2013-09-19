@@ -1,13 +1,13 @@
-# Processing XML data
+## Processing XML data
 
 To import and export XML data there is the module [Catmandu::XML]. The
 following documentation requires at least version 0.03 of this module.
 
 [Catmandu::XML]: https://metacpan.org/module/Catmandu::XML
 
-## Importing XML
+### Importing XML
 
-### First steps
+#### First steps
 
 Let's start with the following XML file `input.xml`:
 
@@ -71,7 +71,7 @@ $ echo '<doc x="1"><x>2</x></doc>' | catmandu convert XML --attributes 0 to JSON
 {"x":"2"}
 ```
 
-### Ordered XML
+#### Ordered XML
 
 The default conversion is not suitable for so called "document-oriented" XML.
 Let's take another example in file `doc.xml`:
@@ -152,7 +152,6 @@ access and modify particular fields:
 ```{.cmd}
 $ catmandu convert XML --root doc --depth 2 --fix 'move_field("doc.title.0.2","doc.title")' to YAML < data/doc.xml
 ---
----
 doc:
   p:
   - - p
@@ -166,11 +165,11 @@ doc:
   - Welcome!
 ```
 
-## Exporting XML
+### Exporting XML
 
 An XML exporter has not been implemented yet.
 
-## Specific XML formats
+### Specific XML formats
 
 The general XML importer and exporter can be difficult to use for more complex
 XML formats. For this reason there are specialized importers and exporters for

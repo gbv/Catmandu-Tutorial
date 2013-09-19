@@ -8,6 +8,8 @@ use autodie;
 # TODO: test on perl 5.18
 local $ENV{PERL_HASH_SEED} = '0x123456789';
 
+my $verbose = grep { $_ =~ /^--?v/ } @ARGV;
+
 @ARGV = glob q{*.src.md} unless @ARGV;
 
 foreach my $src (@ARGV) {
@@ -54,11 +56,11 @@ sub handle_cmd {
     }
     $expect =~ s/\s+$//m;
 
-    note "\$ $cmd";
+    note "\$ $cmd" if $verbose;
     $got = `$cmd`;
     $got =~ s/\s+$//m;
 
-    note $got;
+    note $got if $verbose;
 
     say $out "\$ $cmd";
     say $out $got;
