@@ -1,0 +1,6 @@
+copy_field('_id', 'dc.identifier');
+pica_map('001A0','dc.date');
+pica_map('010@a','dc.language');
+pica_map('009Qa','foaf.primaryTopicOf.$append');
+pica_map('028B[01]ad','dcterms.contributor', -join => ' ');
+remove_field('record');

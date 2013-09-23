@@ -1,0 +1,3 @@
+[%- FOREACH f IN record %]
+[% _id %] [% f.shift %][% f.shift %][% f.shift %][% f.join(":") %]
+[%- END %]
