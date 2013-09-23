@@ -8,7 +8,8 @@ Required CPAN modules to execute examples are listed in `cpanfile`:
     $ sudo cpanm --installdeps .
 
 Code examples are automatically tested with script `testdoc.pl`. Markdown files
-should have file extension `.src.md` in order to do so. 
+should have file extension `.src.md` in order to do so. One must run
+`testdoc.pl` to generate `.md` files required to compile the full tutorial. 
 
 To generate HTML and PDF output, make sure to have cloned the submodules and
 use the Makefile. [Pandoc](http://johnmacfarlane.net/pandoc/) must be

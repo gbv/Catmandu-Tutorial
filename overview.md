@@ -6,19 +6,7 @@
 
 ## CLI
 
-    Available commands:
-
-      commands: list the application's commands
-          help: display a command's help screen
-
-        config: print the Catmandu config as JSON
-       convert: convert objects
-         count: count the number of objects in a store
-          data: store, index, search, import, export or convert objects
-        delete: delete objects from a store
-        export: export objects from a store
-        import: import objects into a store
-          move: move objects to another store
+...
 
 
 ## CLI - convert()
