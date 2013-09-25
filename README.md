@@ -1,7 +1,8 @@
-This repository contains a user-oriented tutorial for the Catmandu data
-processing framework. The tutorial is written in Pandoc Markdown syntax with
-[makespec](https://github.com/jakobib/makespec) extensions. The primary source
-file is `tutorial.md`.
+This repository contains a user-oriented tutorial for the
+[LibreCat](http://librecat.org) data processing framework
+**[Catmandu](https://metacpan.org/module/Catmandu)**. The tutorial is written
+in Pandoc Markdown syntax with [makespec](https://github.com/jakobib/makespec)
+extensions. The primary source file is `tutorial.md`.
 
 Required CPAN modules to execute examples are listed in `cpanfile`:
 
@@ -22,5 +23,8 @@ installed:
 This will create result files `Catmandu-Tutorial.pdf` and
 `Catmandu-Tutorial.html`. The current PDF layout is aligned with the
 [GBV](http://www.gbv.de/) corporate design, but this can be changed.
+
+Snapshots of the PDF and HTML tutorial files are made available at
+<https://github.com/gbv/Catmandu-Tutorial/releases/>.
 
 [![Build Status](https://travis-ci.org/gbv/Catmandu-Tutorial.png)](https://travis-ci.org/gbv/Catmandu-Tutorial)
