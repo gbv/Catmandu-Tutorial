@@ -1,42 +1,13 @@
 Cheatsheet
 
-## Catmandu::Fix - Path
+## Path
 
     $append   - Add a new item at the end of an array
     $prepend  - Add a new item at the start of an array
     $first    - Syntactic sugar for index '0' (the head of the array)
     $last     - Syntactic sugar for index '-1' (the tail of the array)
 
-## Catmandu::Fix::marc_map
-
-    marc_map('008_/35-38','language');
-    marc_map('100','authors.$append');
-    marc_map('245[10]a','title');
-    marc_map('500a','publisher');
-    marc_map('650a','subject', -join => '; ');
-    remove_field('record');
-
-## Catmandu::Fix::mab_map
-
-    mab_map('001','identifier');
-    mab_map('002[a]','date');
-    mab_map('037[b]','language');
-    mab_map('050[ ]','format');
-    mab_map('052[ ]_/0-0','type');
-    mab_map('331[ ]','title');
-    mab_map('406jk','coverage.$append', -join => ' - ');
-    mab_map('700[bc]','subject.$append');
-    remove_field('record');
-
-## Catmandu::Fix::pica_map
-
-    pica_map('001A0','date');
-    pica_map('010@a','language');
-    pica_map('009Qa','primaryTopicOf.$append');
-    pica_map('027A[01]a','furtherTitle');
-    remove_field('record');
-
-## Catmandu::Fix
+## Modifying fields
 
     # Add a new field
     add_field('name','Smith');  # {name => 'Smith'}
@@ -53,7 +24,6 @@ Cheatsheet
     # Extract a substring from the value
     substring('name',0,3);  # {name => 'Mr.'}   
 
-## Catmandu::Fix
 
     # {format => 'print'}                    
     # Copy field
@@ -68,30 +38,6 @@ Cheatsheet
     # Delete every field except named field
     retain_field('dc.format')
 
-## Catmandu::Fix
-
-    # {format => 'marc'}
-    # Capitalize a value
-    capitalize('format');  # {format => 'Marc'}
-
-    # Uppercase a value
-    upcase('format');  # {format => 'MARC'}
-
-    # Downcase a value
-    downcase('format');  # {format => 'marc'}   
-
-## Catmandu::Fix
-
-    # {foo => '   abc   '}
-    # Trim whitespace
-    trim('foo');  # {foo => 'abc'}
-    trim('foo', 'whitespace');  # {foo => 'abc'};
-
-    # trim non-word characters
-    # {foo => '   abc  / : .'}
-    trim('foo', 'nonword');  # {foo => 'abc'};
-
-## Catmandu::Fix
 
     # {ddc => ['000', '004', '600']}
     # Join elements of a field
@@ -103,7 +49,29 @@ Cheatsheet
     # Count elements in array
     count('ddc');  # 3
 
-## Catmandu::Fix
+
+## Strings
+
+    # {format => 'marc'}
+    # Capitalize a value
+    capitalize('format');  # {format => 'Marc'}
+
+    # Uppercase a value
+    upcase('format');  # {format => 'MARC'}
+
+    # Downcase a value
+    downcase('format');  # {format => 'marc'}   
+
+    # {foo => '   abc   '}
+    # Trim whitespace
+    trim('foo');  # {foo => 'abc'}
+    trim('foo', 'whitespace');  # {foo => 'abc'};
+
+    # trim non-word characters
+    # {foo => '   abc  / : .'}
+    trim('foo', 'nonword');  # {foo => 'abc'};
+
+## Search and replace
 
     # {format => 'MAB'}
     # Search and replace using regex expressions
@@ -114,7 +82,7 @@ Cheatsheet
     # Search and replace in array
     replace_all('identifier.*', '-[0-9xX]$', '') # {id => ['123', '567']}
 
-## Catmandu::Fix
+## Lookup
 
     # lookup value of 'ddc' in dict.csv and 
     # replace the value or set it to '000'
@@ -129,7 +97,7 @@ Cheatsheet
     lookup_in_store('ddc', 'MongoDB', -database_name => 'lookups'); 
     lookup_in_store('ddc', 'MongoDB', -delete => 1);
 
-## Catmandu::Fix
+## Conditionals
 
     # set value of field 'ddc' to 'Informatik' 
     # if field 'ddc' has the value '004'
@@ -149,7 +117,7 @@ Cheatsheet
       add_field('ddc', '000');
     end();
 
-## Catmandu::Fix
+## Helper fixes
 
     # Collapse deep nested hash to a flat hash
     collapse();
@@ -160,7 +128,7 @@ Cheatsheet
     # Clone the perl hash and work on the clone
     clone();
 
-## Catmandu::Fix
+## External programs
 
     # Use an external program that can read JSON 
     # from stdin and write JSON to stdout

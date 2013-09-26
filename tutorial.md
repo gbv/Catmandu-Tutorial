@@ -126,7 +126,11 @@ See section on [Fixes](#fixes) for details.
 
 `xml-processing.md`{.include}
 
+`marc-processing.md`{.include}
+
 `pica-processing.md`{.include}
+
+`mab-processing.md`{.include}
 
 # Extending Catmandu
 

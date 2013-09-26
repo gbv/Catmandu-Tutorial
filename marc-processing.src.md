@@ -1,0 +1,11 @@
+## Processing MARC data
+
+### Fixes
+
+    marc_map('008_/35-38','language');
+    marc_map('100','authors.$append');
+    marc_map('245[10]a','title');
+    marc_map('500a','publisher');
+    marc_map('650a','subject', -join => '; ');
+    remove_field('record');
+

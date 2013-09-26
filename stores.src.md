@@ -1,4 +1,3 @@
-## CLI - import()
 
     catmandu import [-?hLv] [long options...]
 
@@ -13,7 +12,7 @@
             -L --load_path
             -v --verbose
 
-## CLI - import()
+## import
 
     $ catmandu import MARC --type USMARC
         to CouchDB --database_name marc --bag marc 
@@ -27,7 +26,7 @@
          to ElasticSearch --index_name mab --bag mab
          < ./data/journals_mab2.dat
 
-## CLI - export()
+## export
 
     catmandu export [-?hLqv] [long options...]
 
@@ -43,7 +42,7 @@
             -q --query
             --limit
 
-## CLI - export()
+Examples:
 
     $ catmandu export CouchDB --database_name marc --bag marc to JSON
 
@@ -51,7 +50,7 @@
 
     $ catmandu export ElasticSearch --index_name mab --bag mab to JSON
 
-## CLI - count()
+## count
 
     catmandu count [-?hLq] [long options...]
 
@@ -66,7 +65,7 @@
             -L --load_path
             -q --query
 
-## CLI - count()
+Examples:
 
     $ catmandu count CouchDB --database_name marc --bag marc
 
@@ -80,7 +79,7 @@
     $ catmandu count ElasticSearch --index_name mab --bag mab 
         --query 'dc.publisher:"Heise"'
 
-## CLI - delete()
+## deleting
 
     catmandu delete [-?hLq] [long options...]
 
@@ -95,7 +94,7 @@
             -L --load_path
             -q --query
 
-## CLI - delete()
+Examples:
 
     $ catmandu delete CouchDB --database_name marc --bag marc
 
@@ -109,7 +108,7 @@
     $ catmandu delete ElasticSearch --index_name mab --bag mab 
         --q '_id:"1262750"'
 
-## CLI - move()
+## move
 
     catmandu move [-?hLqv] [long options...]
 
@@ -126,7 +125,7 @@
             -q --query
             --limit
 
-## CLI - move()
+Examples:
 
     $ catmandu move MongoDB --database_name mab --bag mab 
         to ElasticSearch --index_name mab --bag mab
@@ -144,5 +143,4 @@
     $ catmandu move ElasticSearch --index_name moved --bag moved 
         --query "dc.identifier:\"47918-4\"" 
         to ElasticSearch --index_name selected --bag selected
-
 
