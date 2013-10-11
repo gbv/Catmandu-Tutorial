@@ -19,7 +19,7 @@ The importer expects UTF-8 encoded files as input. Otherwise provide a filehande
 
     $ catmandu convert MAB2 --fix ./fix/mab2.fix to CSV --file mab2.csv --fields identifier,title,language  < ./data/journals_mab2.dat
 
-    $ catmandu convert MAB2 --fix ./fix/mab2.fix to XLS --file mab2.xls --fields identifier,title,language  < ./data/journals_mab2.da
+    $ catmandu convert MAB2 --fix ./fix/mab2.fix to XLS --file mab2.xls --fields identifier,title,language  < ./data/journals_mab2.dat
 
     $ catmandu import MAB2 --fix ./fix/mab2.fix to MongoDB --database_name mab2 --bag mab2 < ./data/journals_mab2.dat
 
