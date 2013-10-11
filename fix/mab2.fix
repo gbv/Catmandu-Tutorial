@@ -9,5 +9,4 @@ mab_map('405[ ]','coverage');
 mab_map('412[ ]','publisher');
 mab_map('527[ ]','related.$append');
 mab_map('700[ ]','subject.$append');
-# mab2_normalize();
 remove_field('record');
