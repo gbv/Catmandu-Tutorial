@@ -1,11 +1,10 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 #ABSTRACT: Executes ```{.cmd} code sections as shell commands
 
 use v5.14.1;
 use Test::More;
 use autodie;
 
-# TODO: test on perl 5.18
 local $ENV{PERL_HASH_SEED} = '0x123456789';
 
 my $verbose = grep { $_ =~ /^--?v/ } @ARGV;
@@ -31,6 +30,8 @@ foreach my $src (@ARGV) {
 }
 
 done_testing;
+
+note "SOME TESTS MAY HAVE FAIL because of hash randomization in Perl $]!" if $] >= 5.018;
 
 sub handle_cmd {
     my ($src, $in, $out) = @_;

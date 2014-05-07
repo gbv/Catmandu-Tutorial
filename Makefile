@@ -4,10 +4,13 @@ SOURCE = tutorial.md
 
 include vzgspec/Makefile
 
-tests: 
+test: 
 	@./testdoc.pl
 
-new: tests
+new: test
 	@make html pdf
 
-.PHONY: tests
+tidy: clean
+	ls *.src.md | sed s/\.src// | xargs rm -f
+
+.PHONY: test
