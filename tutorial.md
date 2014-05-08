@@ -98,29 +98,9 @@ See section on [Stores](#stores) for details.
 
 See section on [Fixes](#fixes) for details.
 
-## Configuration
-
-*...TODO...*
-
-    ---
-    store:
-      mo:
-       package: MongoDB
-       options:
-        database_name: bibliographic
-        bag: marc
-
 # Converting
 
 `convert.md`{.include}
-
-# Stores
-
-`stores.md`{.include}
-
-# Fixes
-
-`fixes.md`{.include}
 
 # Data Formats
 
