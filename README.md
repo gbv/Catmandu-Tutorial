@@ -1,3 +1,6 @@
+*this will be replaced by the central documentation wiki at 
+<https://github.com/LibreCat/Catmandu/wiki>!*
+
 # Catmandu-Tutorial [![Build Status](https://travis-ci.org/gbv/Catmandu-Tutorial.svg)](https://travis-ci.org/gbv/Catmandu-Tutorial)
 
 This repository contains a user-oriented tutorial for the

@@ -1,5 +1,10 @@
 # Introduction
 
+this will be replaced by the central documentation wiki at 
+<https://github.com/LibreCat/Catmandu/wiki>!
+
+----
+
 **Catmandu** is a data processing toolkit developed as part of the LibreCat
 project. LibreCat is an open collaboration of the university libraries of Lund,
 Ghent, and Bielefeld. See the project's website at <http://librecat.org/> for
@@ -22,35 +27,6 @@ look at file `README.md` in the tutorial repository for details.
 [makespec]: http://jakobib.github.io/makespec/
 
 # Overview
-
-## The command line client
-
-[command line client]: #the-command-line-client
-
-The command line client `catmandu` is installed together with the Perl module
-`Catmandu`. Calling it without any arguments list the available commands:
-
-```{.cmd}
-$ catmandu
-    Available commands:
-
-      commands: list the application's commands
-          help: display a command's help screen
-
-        config: print the Catmandu config as JSON
-       convert: convert objects
-         count: count the number of objects in a store
-          data: store, index, search, import, export or convert objects
-        delete: delete objects from a store
-        export: export objects from a store
-        import: import objects into a store
-          move: move objects to another store
-```
-
-The command `help` can be used to show more information about some command, for
-instance by calling `catmandu help convert`. A brief help message is shown with
-option `--help`, `-h` or `-?`, for instance `catmandu convert -?`.
-
 
 ## Working with Data Objects
 
